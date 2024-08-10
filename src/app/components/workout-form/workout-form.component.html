@@ -1,0 +1,90 @@
+<!-- Button trigger modal -->
+<div class="container my-3 mt-5 d-flex justify-content-end">
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Add Workout
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Your Workout Details
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="addWorkout()">
+          <div class="container-md mt-5">
+            <div class="form-group">
+              <label for="userName">User Name:</label>
+              <input
+                id="userName"
+                [(ngModel)]="userName"
+                name="userName"
+                required
+                class="form-control shadow-none"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="workoutType">Workout Type:</label>
+              <select
+                id="workoutType"
+                [(ngModel)]="workoutType"
+                name="workoutType"
+                required
+                class="form-control shadow-none"
+              >
+                <option value="" disabled selected></option>
+                <option value="Cycling">Cycling</option>
+                <option value="Running">Running</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Yoga">Yoga</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="workoutMinutes">Workout Minutes:</label>
+              <input
+                id="workoutMinutes"
+                type="number"
+                [(ngModel)]="workoutMinutes"
+                name="workoutMinutes"
+                required
+                class="form-control shadow-none"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            data-bs-dismiss="modal"
+            class="btn btn-primary my-5 d-block mx-auto"
+          >
+            Add Workout
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
